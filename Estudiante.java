@@ -4,6 +4,9 @@ public class Estudiante {
     private String nombre;
     private Double nota;
 
+    // Variable Static: compartida por todos los objetos
+    private static int totalEstudiantes = 0;
+
     // Constructor vacío
     public Estudiante(){}
 
@@ -12,6 +15,7 @@ public class Estudiante {
         this.codigo = codigo;
         this.nombre = nombre;
         this.nota = nota;
+        totalEstudiantes++;
     }
 
     // Getter y Setter
@@ -46,5 +50,10 @@ public class Estudiante {
     public void mostrarInfo(){
         System.out.println(
             "Estudiante: " + nombre + "Nota: " + nota);
+    }
+
+    // Metodo Static
+    public static int getTotalEstudiante(){
+        return totalEstudiantes;
     }
 }
